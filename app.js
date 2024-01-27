@@ -1,6 +1,8 @@
 let boxes = document.querySelectorAll(".box");
 let msgContainer = document.querySelector(".msg-container");
 let msg = document.querySelector("#msg");
+let msgTurnContainer = document.querySelector(".msgturn-container");
+let msgTurn = document.querySelector("#msg-turn");
 let newGameBtn = document.querySelector("#new-btn");
 let resetBtn = document.querySelector("#reset-btn");
 
@@ -29,15 +31,25 @@ boxes.forEach((box) => {
       turnO = true;
     }
     box.disabled = true;
-
+    playerTurn(box);
     checkWinner();
   });
 });
+
+const playerTurn = (box) => {
+  msgTurnContainer.classList.remove("secrete");
+  if (box.innerText == "X") {
+    msgTurn.innerText = `O turn`;
+  } else {
+    msgTurn.innerText = `X turn`;
+  }
+};
 
 const resetGame = () => {
   turnO = true;
   enableBoxes();
   msgContainer.classList.add("hide");
+  msgTurnContainer.classList.add("secrete");
   showGameContainer();
 };
 
@@ -64,6 +76,7 @@ const showWinner = (winner) => {
 
 const showNoWinner = () => {
   msg.innerText = "It's a tie! No one wins.";
+  msgContainer.classList.add("tie");
   msgContainer.classList.remove("hide");
   disableBoxes();
   hideGameContainer();
@@ -90,7 +103,7 @@ const checkWinner = () => {
     let pos2Val = boxes[pattern[1]].innerText;
     let pos3Val = boxes[pattern[2]].innerText;
 
-    if (pos1Val !=="" && pos2Val !== "" && pos3Val !== "") {
+    if (pos1Val !== "" && pos2Val !== "" && pos3Val !== "") {
       if (pos1Val === pos2Val && pos2Val === pos3Val) {
         showWinner(pos1Val);
         winnerFound = true;

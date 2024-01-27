@@ -5,14 +5,17 @@
 
 
 body {
-    background-color: #548687;
+    /* background-color: #548687; */
+    background-image: url("./backgroungimg.jpg");
     text-align: center;
-    color: black;
+    color: greenyellow;
+    font-size: 3vmin;
 }
 
 #msg {
-    color: black;
-    font-size: 5vmin;
+    color: red;
+    font-size: 8vmin;
+    font-weight: 800;
 }
 
 .msg-container {
@@ -54,7 +57,7 @@ body {
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
     font-size: 8vmin;
     color: #b0412e;
-    background-color: whitesmoke;
+    background-color: blanchedalmond;
     cursor: pointer;
 }
 
@@ -79,5 +82,30 @@ body {
 }
 
 .winner {
-    background-color: #8eff8e;
+    /* background-color: #8eff8e; */
+    background-image: url("./Winnerimg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.msgturn-container {
+    height: 15vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+#msg-turn {
+    color: greenyellow;
+    font-size: 5vmin;
+}
+
+.secrete {
+    display: none;
+}
+
+.tie {
+    background-image: url("./tieImage.jpg");
 }
