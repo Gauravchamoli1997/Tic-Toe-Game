@@ -6,7 +6,7 @@
 
 body {
     /* background-color: #548687; */
-    background-image: url("./backgroungimg.jpg");
+    background-image: url("./images/backgroungimg.jpg");
     text-align: center;
     color: greenyellow;
     font-size: 3vmin;
@@ -83,7 +83,7 @@ body {
 
 .winner {
     /* background-color: #8eff8e; */
-    background-image: url("./Winnerimg.jpg");
+    background-image: url("./images/Winnerimg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -107,5 +107,5 @@ body {
 }
 
 .tie {
-    background-image: url("./tieImage.jpg");
+    background-image: url("./images/tieImage.jpg");
 }
